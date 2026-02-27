@@ -36,7 +36,10 @@
             right_can_interface:='can0'
             left_arm_prefix:='left_'
             right_arm_prefix:='right_'
-            can_fd:='true'
+            can_fd:='false'
+            with_body:='false'
+            arm_base_xyz:='0.0 -0.031 0.698'
+            arm_base_rpy:='1.5708 0 0'
             "
             >
 
@@ -145,6 +148,36 @@
 
     <xacro:if value="${not bimanual}">
 
+        <!-- Single arm with body/rod mount (world → openarm_body_link0 → arm) -->
+        <xacro:if value="${with_body}">
+          <xacro:openarm_body
+            body_type="${body_type}"
+            body_prefix="${body_prefix_modified}"
+            no_prefix="${no_prefix}"
+            description_pkg="openarm_description"
+            connected_to="${body_connected_to}"
+            xyz="${xyz}"
+            rpy="${rpy}"
+            inertials="${body_inertials}"
+            kinematics="${body_kinematics}"
+            kinematics_link="${body_kinematics_link}" />
+          <xacro:openarm_arm
+            arm_type="${arm_type}"
+            arm_prefix="${arm_prefix_modified}"
+            no_prefix="${no_prefix}"
+            description_pkg="openarm_description"
+            connected_to="openarm_body_link0"
+            xyz="${arm_base_xyz}"
+            rpy="${arm_base_rpy}"
+            joint_limits="${joint_limits}"
+            kinematics="${kinematics}"
+            kinematics_link="${kinematics_link}"
+            inertials="${inertials}"
+            kinematics_offset="${kinematics_offset}" />
+        </xacro:if>
+
+        <!-- Single arm standalone (floating, no body) -->
+        <xacro:if value="${not with_body}">
         <xacro:openarm_arm
         arm_type="${arm_type}"
         arm_prefix="${arm_prefix_modified}"
@@ -157,6 +190,7 @@
         inertials="${inertials}"
         connected_to=""
         />
+        </xacro:if>
 
         <xacro:if value="${ros2_control}">
 

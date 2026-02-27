@@ -7,12 +7,15 @@
 
     <xacro:property name="prefix" value="${'' if no_prefix else 'openarm' + '_' + arm_prefix}" />
 
-    <xacro:if value="${arm_prefix == 'right_'}">
-      <xacro:property name="reflect" value="1" />
+    <!-- reflect=+1 for right arm (explicit "right_" prefix) and for single arm
+         (empty prefix), which is always right-arm hardware.
+         reflect=-1 only for the explicitly mirrored left arm ("left_" prefix). -->
+    <xacro:if value="${arm_prefix == 'left_'}">
+      <xacro:property name="reflect" value="-1" />
     </xacro:if>
 
-    <xacro:unless value="${arm_prefix == 'right_'}">
-      <xacro:property name="reflect" value="-1" />
+    <xacro:unless value="${arm_prefix == 'left_'}">
+      <xacro:property name="reflect" value="1" />
     </xacro:unless>
 
     <xacro:unless value="${connected_to == ''}">
@@ -102,7 +105,11 @@
       <xacro:openarm-kinematics name="joint7" config="${kinematics}" />
       <parent link="${prefix}link6"/>
       <child link="${prefix}link7"/>
-      <axis xyz="0 ${reflect} 0"/>
+      <!-- J7 hardware positive direction is +Y for single arm (empty prefix) and
+           right arm (right_ prefix).  Left arm (left_ prefix) uses -Y via reflect=-1.
+           This matches the original axis assignment for all three configurations. -->
+      <xacro:property name="j7_sign" value="${reflect}"/>
+      <axis xyz="0 ${j7_sign} 0"/>
       <xacro:openarm-limits name="joint7" config="${joint_limits}" />
     </joint>
 
