@@ -27,9 +27,9 @@
 
   <xacro:arg name="can_interface" default="slcan0" />
 
-  <xacro:arg name="left_can_interface" default="can1" />
+  <xacro:arg name="left_can_interface" default="can0" />
 
-  <xacro:arg name="right_can_interface" default="slcan0" />
+  <xacro:arg name="right_can_interface" default="can1" />
 
   <xacro:arg name="left_arm_prefix" default="left_" />
 
@@ -46,7 +46,7 @@
 
   <xacro:arg name="left_arm_base_xyz" default="0.0 0.031 0.698" />
   <xacro:arg name="left_arm_base_rpy" default="-1.5708 0 0" />
-
+  
   <xacro:arg name="can_fd" default="false" />
 
   <xacro:arg name="with_body" default="false" />
