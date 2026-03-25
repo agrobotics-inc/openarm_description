@@ -12,30 +12,63 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-joint1:
-  kp: 120.0
-  kd: 15.0
+right:
 
-joint2:
-  kp: 140.0
-  kd: 15.0
+  joint1:
+    kp: 200.0
+    kd: 10.0
 
-joint3:
-  kp: 70.0
-  kd: 2.0
+  joint2:
+    kp: 200.0
+    kd: 8.0
 
-joint4:
-  kp: 95.0
-  kd: 2.0
+  joint3:
+    kp: 75.0
+    kd: 2.0
 
-joint5:
-  kp: 10.0
-  kd: 0.7
+  joint4:
+    kp: 105.0
+    kd: 2.0
 
-joint6:
-  kp: 25.0
-  kd: 1.75
+  joint5:
+    kp: 15.0
+    kd: 0.6
 
-joint7:
-  kp: 10.0
-  kd: 0.5
+  joint6:
+    kp: 55.0
+    kd: 1.75
+
+  joint7:
+    kp: 30.0
+    kd: 1.75
+
+left:
+
+  joint1:
+    kp: 200.0
+    kd: 10.0
+
+  joint2:
+    kp: 200.0
+    kd: 8.0
+
+  joint3:
+    kp: 75.0
+    kd: 2.0
+
+  joint4:
+    kp: 105.0
+    kd: 2.0
+
+  joint5:
+    kp: 15.0
+    kd: 0.6
+
+  joint6:
+    kp: 55.0
+    kd: 1.75
+
+  joint7:
+    kp: 30.0
+    kd: 1.75
+
