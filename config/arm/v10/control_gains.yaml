@@ -15,60 +15,60 @@
 right:
 
   joint1:
-    kp: 100.0
-    kd: 5.25
+    kp: 200.0
+    kd: 10.0
 
   joint2:
-    kp: 100.0
-    kd: 5.0
+    kp: 200.0
+    kd: 8.0
 
   joint3:
     kp: 75.0
     kd: 2.0
 
   joint4:
-    kp: 85.0
+    kp: 105.0
     kd: 2.0
 
   joint5:
-    kp: 20.0
-    kd: 1.0
+    kp: 15.0
+    kd: 0.6
 
   joint6:
-    kp: 28.0
+    kp: 55.0
     kd: 1.75
 
   joint7:
-    kp: 35.0
+    kp: 30.0
     kd: 1.75
 
 left:
 
   joint1:
-    kp: 100.0
-    kd: 5.25
+    kp: 200.0
+    kd: 10.0
 
   joint2:
-    kp: 100.0
-    kd: 5.0
+    kp: 200.0
+    kd: 8.0
 
   joint3:
     kp: 75.0
     kd: 2.0
 
   joint4:
-    kp: 85.0
+    kp: 105.0
     kd: 2.0
 
   joint5:
-    kp: 20.0
-    kd: 1.0
+    kp: 15.0
+    kd: 0.6
 
   joint6:
-    kp: 28.0
+    kp: 55.0
     kd: 1.75
 
   joint7:
-    kp: 35.0
+    kp: 30.0
     kd: 1.75
 
