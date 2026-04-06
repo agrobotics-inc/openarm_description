@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Gravity compensation scale: 0.0 = disabled, 1.0 = full compensation.
+# Start at 0.0, verify arm feels lighter as you increase toward 1.0.
+# If arm floats upward, URDF masses are slightly off — reduce below 1.0.
+gravity_comp_scale: 0.0
+
 right:
 
   joint1:
