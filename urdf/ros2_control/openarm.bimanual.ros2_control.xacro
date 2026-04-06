@@ -11,8 +11,7 @@
              hand:=^|false
              left_arm_prefix:=^|left_
              right_arm_prefix:=^|right_
-             can_fd:=^|true
-             gravity_comp_scale:=^|0.0">
+             can_fd:=^|true">
 
     <!-- Left Arm Hardware Interface -->
     <ros2_control name="openarm_left_hardware_interface" type="system">
@@ -29,7 +28,7 @@
             <param name="arm_prefix">${left_arm_prefix}</param>
             <param name="hand">${hand}</param>
             <param name="can_fd">${can_fd}</param>
-            <param name="gravity_comp_scale">${gravity_comp_scale}</param>
+            <param name="gravity_comp_scale">${control_gains['gravity_comp_scale']}</param>
             <param name="kp1">${control_gains['left']['joint1']['kp']}</param>
             <param name="kp2">${control_gains['left']['joint2']['kp']}</param>
             <param name="kp3">${control_gains['left']['joint3']['kp']}</param>
@@ -95,7 +94,7 @@
             <param name="arm_prefix">${right_arm_prefix}</param>
             <param name="hand">${hand}</param>
             <param name="can_fd">${can_fd}</param>
-            <param name="gravity_comp_scale">${gravity_comp_scale}</param>
+            <param name="gravity_comp_scale">${control_gains['gravity_comp_scale']}</param>
             <param name="kp1">${control_gains['right']['joint1']['kp']}</param>
             <param name="kp2">${control_gains['right']['joint2']['kp']}</param>
             <param name="kp3">${control_gains['right']['joint3']['kp']}</param>
