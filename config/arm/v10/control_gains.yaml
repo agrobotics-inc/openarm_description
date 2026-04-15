@@ -40,7 +40,7 @@ right:
     kd: 0.6
 
   joint6:
-    kp: 55.0
+    kp: 50.0
     kd: 1.75
 
   joint7:
@@ -70,7 +70,7 @@ left:
     kd: 0.6
 
   joint6:
-    kp: 55.0
+    kp: 50.0
     kd: 1.75
 
   joint7:
